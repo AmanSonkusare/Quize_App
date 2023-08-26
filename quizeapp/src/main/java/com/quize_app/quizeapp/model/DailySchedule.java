@@ -4,16 +4,16 @@ import jakarta.persistence.*;
 import lombok.Data;
 
 import java.util.Date;
+import java.util.Set;
 
 @Data
 @Entity
-@Table(name = "daily_scheduler")
+@Table(name = "daily_schedule")
 public class DailySchedule {
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name="id")
     private int id;
-    @Column(name = "weekly_id")
-    private int weeklyid;
     @Column(name = "day_number")
     private int dayNumber;
     private String title;
@@ -21,12 +21,11 @@ public class DailySchedule {
     @Column(name = "course_topic")
     private String courseTopic;
     private String category;
-    private boolean isActive;
+    private Boolean isActive;
     private Date CreatDate;
     private String creatBy;
     private Date modifiedDate;
     private String modifiedBy;
-
 
 }
 
