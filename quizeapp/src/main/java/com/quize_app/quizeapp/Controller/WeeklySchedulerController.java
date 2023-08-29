@@ -22,16 +22,26 @@ public class WeeklySchedulerController {
         return "weekly record save successfully";
     }
 
-    @PostMapping("/weeklydata")
-    public String WeeklyRandomData(@RequestParam("value") int value, @RequestParam("courseid") int courseId) {
-        int courseid = service.weeklyDataGenerate(value, courseId);
-        return "weekly data save successfully" + courseid;
+
+    @PostMapping("/weeklydata/{value}")
+    public String WeeklyRandomData(@PathVariable int value , @RequestBody WeeklyScheduler weeklyScheduler) {
+        int courseid=weeklyScheduler.getCourseid();
+        System.out.println(courseid);
+        int cou_id = service.weeklyDataGenerate(value, courseid);
+        return "weekly data save successfully" + cou_id;
     }
+
 
     @GetMapping("/week/{id}")
     public Optional<WeeklyScheduler> getByWeekly(@PathVariable int id) {
         return service.getByWeek(id);
     }
+
+    @GetMapping("/course/{courseId}")
+    public List<WeeklyScheduler> getByCourseId(@PathVariable int courseId){
+        return service.getByCourseId(courseId);
+    }
+
 
     @GetMapping("/week")
     public List<WeeklyScheduler> getAll() {

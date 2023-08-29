@@ -41,6 +41,8 @@ public class WeeklyScheduleService {
     public int weeklyDataGenerate(int value, int courseId) {
 
         List<WeeklyScheduler> list = new ArrayList<>();
+
+
         // int courseId=RandaomCourseId.courseId();//common value pass all row
         for (int i = 0; i < value; i++) {
             WeeklyScheduler week = WeeklyScheduler.builder()
@@ -62,20 +64,25 @@ public class WeeklyScheduleService {
         return courseId;
     }
 
+    public List<WeeklyScheduler> getByCourseId(int id) {
+
+        return wsrepo.findBycourseid(id);
+    }
+
     public void deleteWeeklyData(int id) {
         wsrepo.deleteById(id);
 
     }
 
-    public Optional<WeeklyScheduler> updateById( WeeklyScheduler weeklyScheduler,int id) {
-        Optional<WeeklyScheduler> weekid=wsrepo.findById(id);
-        if(weekid != null)
-        wsrepo.save(weeklyScheduler);
+    public Optional<WeeklyScheduler> updateById(WeeklyScheduler weeklyScheduler, int id) {
+        Optional<WeeklyScheduler> weekid = wsrepo.findById(id);
+        if (weekid != null)
+            wsrepo.save(weeklyScheduler);
         return weekid;
     }
 
     public Optional<WeeklyScheduler> weeklyDataById(int id) {
-       return wsrepo.findById(id);
+        return wsrepo.findById(id);
     }
 
 }

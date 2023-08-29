@@ -13,6 +13,8 @@ import java.util.List;
 public interface WeeklySchedulerRepo extends JpaRepository<WeeklyScheduler, Integer> {
 //    @Query("SELECT w.id,w.week_number,d.id FROM weekly_scheduler w JOIN daily_scheduler dON w.id= id")
 //    public List<DailySchedule> gatAll(@Param("id") int id);
+    public List<WeeklyScheduler> findBycourseid(int id);
+
 
 
 

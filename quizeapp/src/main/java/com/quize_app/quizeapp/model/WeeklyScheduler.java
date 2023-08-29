@@ -39,8 +39,8 @@ public class WeeklyScheduler {
     private Date modifiedDate;
     private String modifiedBy;
 
-  @OneToMany(cascade = CascadeType.ALL)
-  @JoinColumn(name="weekly_id")
-   private List<DailySchedule> dailySchedules=new ArrayList<>();
+//  @OneToMany(cascade = CascadeType.ALL)
+//  //@JoinColumn(name="weekly_id")
+//   private List<DailySchedule> dailySchedules=new ArrayList<>();
 
 }

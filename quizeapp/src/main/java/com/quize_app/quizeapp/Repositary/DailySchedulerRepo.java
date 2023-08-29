@@ -10,5 +10,6 @@ import java.util.List;
 @Repository
 
 public interface DailySchedulerRepo extends JpaRepository<DailySchedule, Integer> {
- //public List<DailySchedule> findByWeeklyId(int weeklyId);
+ public List<DailySchedule> findByweeklySchedulerId(int weeklyId);
+
 }
