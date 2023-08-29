@@ -67,4 +67,12 @@ public List<DailySchedule> findByWeekId(int weekId){
         return repo.findByweeklySchedulerId(weekId);
 }
 
+public Optional<DailySchedule> updateById(DailySchedule dailySchedule,int id){
+       Optional<DailySchedule> dailyId=repo.findById(id);
+       if(dailyId!=null){
+           repo.save(dailySchedule);
+       }
+       return dailyId;
+}
+
 }

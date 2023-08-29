@@ -59,9 +59,9 @@ public class WeeklySchedulerController {
        return service.updateById(w,id);
     }
 
-    @GetMapping("/weklydata/{id}")
-    public Optional<WeeklyScheduler> getWeekDataById(@PathVariable int id) {
-        return service.weeklyDataById(id);
+    @GetMapping("/weeklydata/{id}")
+    public Optional<WeeklyScheduler> getWeekDataById(@PathVariable int n) {
+        return service.weeklyDataById(n);
     }
 
 

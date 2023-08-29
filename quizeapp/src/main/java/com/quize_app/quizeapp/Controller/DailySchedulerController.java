@@ -47,8 +47,8 @@ public class DailySchedulerController {
         return service.findByWeekId(weekid);
     }
 
-//    @PutMapping("/daily/{id}")
-//    public void updateDailyRecord(@RequestBody DailySchedule dailySchedule,@PathVariable int id){
-//
-//    }
+    @PutMapping("/daily/{id}")
+    public void updateDailyRecord(@RequestBody DailySchedule dailySchedule,@PathVariable int id){
+        service.updateById(dailySchedule,id);
+    }
 }
