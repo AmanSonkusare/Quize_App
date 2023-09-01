@@ -35,7 +35,7 @@ public class DailySchedule {
 
     @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name="week_schedular_id")
-    private WeeklyScheduler weeklyScheduler;
+   private WeeklyScheduler weeklyScheduler;
 
 }
 

@@ -39,8 +39,8 @@ public class WeeklyScheduler {
     private Date modifiedDate;
     private String modifiedBy;
 
-  @OneToMany(cascade = CascadeType.PERSIST)
-  //@JoinColumn(name="weekly_id")
+  @OneToMany(cascade = CascadeType.ALL )
+
   private List<DailySchedule> dailySchedules=new ArrayList<>();
 
 }
