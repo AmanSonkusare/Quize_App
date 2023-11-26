@@ -3,6 +3,7 @@ package com.quize_app.quizeapp.Controller;
 import com.quize_app.quizeapp.Service.DailyScheduleService;
 import com.quize_app.quizeapp.model.DailySchedule;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.web.servlet.error.ErrorController;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -10,8 +11,9 @@ import java.util.List;
 import java.util.Optional;
 
 @RestController
+@CrossOrigin
 @RequestMapping("/dailyschedule")
-public class DailySchedulerController {
+public class DailySchedulerController implements ErrorController {
 
     @Autowired
     private DailyScheduleService service;
